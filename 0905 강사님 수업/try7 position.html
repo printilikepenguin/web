@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>try7</title>
+    <style>
+        p {
+            width: 500px;
+            height: 200px;
+            background-color: aliceblue;
+            border: 13px solid whitesmoke;
+        }  
+        #absolute {
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+        #relative {
+            position: relative;
+            left: 100px;
+            top: 200px;
+        }
+        #fixed {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            position: fixed;
+            right: 30px;
+            top: 30px
+        }
+    </style>
+</head>
+<body>
+    <p id="absolute">절대포지션은 웹브라우저 기준<br>
+       입력값: 왼쪽으로부터, 위로부터 50px<br>
+    </p>
+    <p id="relative">상대포지션은 부모 기준<br>
+    입력값: 왼쪽부터 100px, 위에서 200px</p>
+    <p id="fixed">고정이다</p>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>align-content</title>
+  <!-- 저스티파이 콘텐트랑 똑같은데 전제조건 있어~~ -->
+  <style>
+    .container {
+      width: 200px;
+      height: 150px;
+      background-color: wheat;
+      border: 1px solid olive;
+      margin: 30px;
+      display: flex;  /* 플렉스 컨테이너 지정 */
+      /* row 주축방향으로 wrap 여러줄 표시 */
+      flex-flow: row wrap;
+      float: left;
+    }
+
+    .box {
+      background-color: olive;
+      width: 80px;
+      border: 1px dotted darkgreen;
+    }
+    p {
+      color: white;
+      text-align: center;
+    }
+    #opt1 {
+      /* 교차축 시작점 */
+      align-content: flex-start;
+    }
+    #opt2 {
+      /* 교차축 끝점 */
+      align-content: flex-end;
+    }
+    #opt3 {
+      /* 교차축 중앙 */
+      align-content: center;
+    }
+    #opt4 {
+      /* 시작 끝 배치 후 중앙사이 간격 일정하게 */
+      align-content: space-between;
+    }
+    #opt5 {
+      /* 모든 간격 일정하게 */
+      align-content: space-around;
+    }
+    #opt6 {
+      /* 항목 늘려 교차축에 가득차게 */
+      align-content: stretch;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="opt1">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>
+  <div class="container" id="opt2">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>
+  <div class="container" id="opt3">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>
+  <div class="container" id="opt4">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>
+  <div class="container" id="opt5">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>
+  <div class="container" id="opt6">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .total-area {
+      width: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      margin: 0 auto;
+    }
+    /* login-box 에 padding 주면 hr 도 같이 padding 받아서 선 길이 짧아져 */
+    .login-box {
+      border-radius: 10px;
+      border: 2px solid lightgray;
+      width: 100%;
+    }
+
+    #loginBoxTitle {
+      color: #000000;
+      font-weight: bold;
+      font-size: 018px;
+      text-align: center;
+      margin-bottom: 0px;
+      /* 여기에 padding 추가 */
+      padding: 20px 30px;
+    }
+
+    /* 선은 border-bottom으로 한게 아니라 hr 로 처리해줌 */
+
+    .login-box hr {
+      border: 2px solid skyblue;
+      opacity: 1;
+    }
+    /* 이부분 # 으로 되어있어서 . 으로 고침 class 선택자라서 */
+    .form-group {
+      padding: 1rem 2rem;
+    }
+
+    .form_check {
+      display: flex;
+      padding: 0 1.5rem;
+      justify-content: space-between;
+    }
+    /* btn 위치 조정 */
+    .btn__info {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+  </style>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+  <!-- 전체 영역 제한 -->
+  <div class="total-area">
+
+    <!-- 안내메세지 -->
+    <!-- border-radius 단위 %보다 1rem, 2rem 이런식으로 주는게 좀 깔끔해 6% => 1rem 으로바꿨어 -->
+    <div class="text-bg-danger p-3" style="border-radius: 1rem; margin-bottom: 20px;">Invalid Login or password</div>
+
+    <!-- 설명창 -->
+    <h1><B>SSAFY 전용 Gitlab 시스템</B>
+      <hr>
+    </h1>
+
+    <!-- login Box -->
+    <div class="login-box">
+      <div id="loginBoxTitle">Sign in</div>
+      <!-- 여기 hr로 표시해준거 추가 -->
+      <hr>
+      <div class="form-group">
+        <label><B>Username or Email</B></label>
+        <input type="text" name="uid" id="uid" class="form-control" value=""
+          style="text-transform:uppercase;ime-mode:disabled">
+      </div>
+      <div class="form-group">
+        <label><b>Password</b></label>
+        <input type="password" name="upw" id="upw" class="form-control" value="" autocomplete="off">
+      </div>
+      <!-- 여기 boootstrap form-check 로 스타일 안변해서 깨버렸음 -->
+      <div class="mb-3 form_check">
+        <!-- flex 사용할려고 div로 묶어줌 -->
+        <div class="form_detail">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Remember me</label>
+        </div>
+        <p><a href="" class="text-sm">Forgot your password?</a></p>
+      </div>
+      <div class="btn__info">
+      <button type="button" class="btn btn-success"
+        style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 190px; --bs-btn-font-size: 18px;">
+        Sign in</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
