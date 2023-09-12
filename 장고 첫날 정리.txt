@@ -1,0 +1,68 @@
+다른이름으로 만들지마세요
+프레임워크 = 미리 짜여진 소스코드
+alt+shift+f 누르면 자동 포매터 돼용 장고에성 
+
+MTV 디자인 패턴
+M: models.py 데이터와 관련된 로직
+T: tempeletes.py 보여지는 것(화면)
+V: views.py 중간다리
+
+장고 프로젝트 생성 루틴 정리 + git
+1. 가상환경 생성
+2. 가상환경 활성화
+3. django 설치
+4. 의존성 파일 생성 (패키지 설치시마다 진행)
+5. .gitignore 파일 생성 (첫 add 전)
+6. git 저장소 생성
+7. 장고 프로젝트 생성
+
+python -m venv venv  # 가상환경 venv 생성
+
+source venv/Scripts/activate  # 활성화  
+*가상환경은 이동하는 장소가 아닌 on/off 의 개념이다
+
+pip list  # 설치된 패키지 목록 확인
+# 협업할 경우 패키지 목록이 공유되어야 한다
+# requests 설치후 패키지 목록이 변화됨
+
+pip freeze > requirements.txt
+
+pip install requests
+
+pip freeze > requirements.txt
+
+#################
+또 다른 가상환경을 만들어야할 때
+pip install -r requirements.txt
+pip freeze > requirements.txt
+####################
+
+deactivate  # 가상환경 끄는 법 (화면 끄면 자동으로 꺼짐)
+
+venv랑 txt파일만 있는 폴더에서 vscode 열기
+
+pip install Django
+
+pip list ( 목록에 장고 잘 있는지 확인)
+pip freeze > requirements.txt
+
+django-admin startproject firstpjt .  # firstpjt 라는 디렉토리 새로 생성
+* 스타트 프로젝트
+
+python manage.py runserver  # manage.py와 동일한 경로에서 명령어 진행
+
+실행취소 : ctrl + c
+############################
+
+장고 어플리케이션 생성 및 등록 정리
+앱 사용 과정: 생성 - 등록
+앱의 이름은 복수형으로 지정하는 것을 권장
+
+python manage.py startapp articles  # 앱 생성입니다
+*스타트 앱 다른 거 확인할것
+
+settings.py 들어가서 installed app 리스트에 'articles' 추가  # 이것이 앱 등록입니다
+
+################################
+
+장고 디자인 패턴

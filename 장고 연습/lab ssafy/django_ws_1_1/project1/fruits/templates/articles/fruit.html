@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+{% comment %} views.py에는 어떤 데이터 조작도 하지 않는다???
+fruit_list = ["귤","딸기","사과","감","바나나","파인애플","구아바", "복숭아", "망고스틴"]
+hate = ["사과","구아바"] 
+{% endcomment %}
+<body>
+  {% for f in fruit_list%}
+    {% if f|length != 1 %}
+      {% if f not in hate %}
+        <p>{{ f|truncatechars:3}}</p>
+      {% endif %}
+    {% endif %}
+  {% endfor %}  
+</body>
+</html>
