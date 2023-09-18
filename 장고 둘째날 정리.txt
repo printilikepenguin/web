@@ -1,0 +1,72 @@
+순서 :
+가상환경 만든다
+폴더만든다
+app에 html 넣어준다
+템플릿구분 해준다...
+- DTL로 조건문 넣어주기 ...: 로직을 넣어주는 도구다 .. 장고html의 특이다. 
+- 여러 템플릿의 부모 템플릿 만들어주기 ...(ex: 베이스): html 구문 다 안써도됨
+{% block content %}
+하위 템플릿이 재정의할 수 있는 block 공간
+{% endblock content %}
+- 부모템플릿이 부트스트랩이면 폼같은 거 걍 따올 수 있다...
+- 헤더나 어사이드 동일하면 그냥 부모계속 따오려고 그럼
+
+
+
+
+
+DTL : 장고템플릿 랭귀지 ...
+
+변수, 필터, 태그, 주석
+
+변수쓰는법: 중괄호 열고 닫기 {{ variable }}
+- render 함수의 세번째 인자로 딕셔너리 데이터를 사용 ...
+- render 함수 세번째 인자는 반드시 딕셔너리..
+
+필터: 변수 뒤에 쓰기 {{ variable|filter }}
+
+태그: 기능적 제어 흐름 담당 ... {% if %} {% endif %}
+- html 에서 조건문을 쓸 수 있다 ..
+
+
+###################
+DTL 쓰는 순서
+
+일단 URL에 추가해준다.. ex) path('dinner/', views.함수명)
+views.py가서 def 함수명 새로 만들어준다... 
+템플릿/아티클 폴더가서 html 새로 하나 만들어준다
+- django template language 가면 조건문 종류 나옴 {%if%} 같은거...
+
+
+
+
+	####################
+템플릿 상속 .... {extends} 내
+{block}  하위템플릿에서 재정의할 수 있는블록 정의
+'''
+{% extends "articles/base.html" %}
+
+{% block content %}
+  <h1>fake naver</h1>
+  <form action="https://search.naver.com/search.naver/" method="GET">
+    <label for="message">검색어:</label>
+    <input type="text" name="query" id="message">
+    <input type="submit">
+  </form>
+{% endblock content %}
+'''
+action : 입력데이터가 전송될 URL 지정(목적지), 없으면 현재 form의 페이지 url로 보내짐
+method : 데이터를 어떤 방식으로 보낼지 정의. http request methods(GET, POST) 지정
+-get post의 보안성 이길만큼 간편해서 사람들이 씀
+-post
+두 개 차이: 보안성
+
+###
+데이터베이스의 쿼리: 
+폼태그의 쿼리: 서버의 데이터를 전달(url에 붙는 추가정보)
+
+쿼리 스트링 파라미터 ...
+키 밸류 ..
+###########
+템플릿 상속을 왜할까 .....
+중복을 피하려고 ,./..

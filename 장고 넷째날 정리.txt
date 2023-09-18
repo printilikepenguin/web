@@ -1,0 +1,91 @@
+
+
+화면정리 단축키 ctrl+엘
+
+할일!!!!
+
+- 폴더 확인하고 가상공간 틀기
+- 플젝, 앱 등 html 틀거면 views와 템플릿 활용
+- 데이터 활용하고 싶으면 modes에 클래스, makemigrations, migrate
+- sqlite 확인하깅
+
+ORM : 객체지향프로그래밍 언어를 사용해 호환되지 않는 유형의 시스템 간 데이터 변환 기술
+
+QuerySet API : ORM에서 데이터를 검색, 필터링, 정렬 및 그룹화하는데 사용하는 도구
+>>> API를 사용해 SQL이 아닌 파이썬 코드로 데이터를 처리
+
+쿼리를 보낸다? 명령을 보낸다 ...
+파이썬 코드가 ORM에 의해 SQR로 변환, DB의 응답데이터를 쿼리셋으로 변환해 우리에게 전달
+
+QuerySet 데이터베이스에게서 전달받은 개체 목록(데이터모음)
+장고 ORM을 통해 만들어진 자료형 ...인데 단일 객체 반환할 땐 Class의 인스턴스로 반환
+
+쿼리셋쓸때 필수 : 
+pip install django-extensions(셋팅에 앱 등록해야됨 django_extensions(밑줄))
+pip install ipython
+>>> 패키지 많이 생겻으니 freeze 해주셈
+
+django shell?
+python manage.py shell_plus  온갖 임포트는 다해옴
+
+########################
+데이터 만들 준비 끝 ..........................................................................
+CRUD 순으로 갑니다 ...
+create, read, update, delete
+
+1. 클래스로 우선 인스턴스 만들어야됨 article = Article()
+2. 넣는 방법 세개
+- article.title='first', article.content='django!', article.save()
+>>>회사에선 첫번재방법이 굿...
+- article = Article(title='second', content='django!')
+article.pk, article.save()
+- Article.object.create(title='third', content='django!')
+article.pk, article.save()
+
+##############
+조회가 제일 중요하다 알것냐 .............................ㄴ ㅔ
+
+for문을 이용한 전체조회(print title처럼 조건가능) all() 써도됨(쿼리셋리스트가 나옴)
+get을 이용한 단일 조회 (없는걸 조회하면? 난리남)-pk로 조회할때만 쓰자
+filter를 이용한 특정조건 데이터 조회
+
+#################
+수정......................
+
+조회... article에 넣어 ..바꿔 .. save() 해...
+
+##########
+삭제 . . .
+유튜브처럼 바로 딜리트하면 안돼!!!!!!!!!!!!!!!!!!
+
+항상 조회먼저 ,,,!!!!!!! 내가 삭제할게 맞는지 확인
+그다음 아티클.딜리트
+
+
+사용된 pk는 다시 사용되지 않는다 ..
+
+########### 
+Field lookup
+
+__exact : 정확히 일치
+__contains : 포함하는지
+__gt : 큼
+__gte : 크거나 같음
+__lt : 작음
+__lte : 작거나 같음
+__startwith : 시작하는지
+__endwith : 끝나는지
+
+1) 모델에 클래스 ...
+
+2) 조회해보기
+
+3) 인스턴스 변수 선언
+
+4) 조회
+
+5) 변수 선언
+
+7) 조회
+
+8) 저장
